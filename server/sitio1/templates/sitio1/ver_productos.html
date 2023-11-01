@@ -1,0 +1,44 @@
+{%  extends 'sitio1/index.html' %}
+
+{% block titulo %}
+Productos
+{% endblock %}
+
+{% block content %}
+    
+{% if datos %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td>Stock</td>
+            <td>Operaciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in datos %}
+            <tr>
+                <td>{{p.id}}</td>
+                <td>{{p.nombre}}</td>
+                <td>{{p.precio}}</td>
+                <td>{{p.stock}}</td>
+            </tr>
+        {%endfor%}
+        
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td>Stock</td>
+            <td></td>
+        </tr>
+    </tfoot>
+</table>
+{% else %}
+NO HAY PRODUCTOS
+{% endif %}
+{% endblock %}
